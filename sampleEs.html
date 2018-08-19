@@ -4,10 +4,38 @@
 
 
 <script>
-
+'use strict'
 console.log([...Array(100)].fill(100))
 console.log(Array(100).fill(100))
+console.log(Array(100).fill(1).map((i,index)=>index+1000))
+console.log(Array.of(2,3,4))
 
+function doSomthing() {
+	console.log([...arguments])
+	console.log(arguments)
+	var args = Array.from(arguments);	
+	console.log(args)
+}
+doSomthing(1,2,3,4,5);
+
+
+
+function SampleFunc(){
+	console.log('this without use strike SampleFunc', this);
+}
+SampleFunc()
+
+
+let sampleFuncVar = function(){
+	console.log('this without use strike sampleFuncVar', this);
+	let test = function(){
+		console.log('this without use strike sampleFuncVar test', this);
+	}.bind(this)
+	test()
+}.bind({test : 100})
+sampleFuncVar()
+
+console.log('this without', this);
 
 {
 
