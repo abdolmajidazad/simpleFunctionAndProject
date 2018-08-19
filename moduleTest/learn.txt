@@ -1,0 +1,3 @@
+npm install -g rollup
+
+rollup app.js --o bundle.js --f es

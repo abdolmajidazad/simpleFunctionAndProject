@@ -1,0 +1,175 @@
+<html>
+  <head>
+    <title>Event details</title>
+  </head>
+ 
+  <body>
+  <div id="first-div" style="background-color: #ddd;padding: 100px;" class="item">
+    <form style="background-color: #9d9d9d;padding: 100px;" class="item" id="first-form" class="item">
+      <!--<input class="title" id="first-input" class="item"></input>
+	  <input class="title" id="sec-input" class="item"></input>
+	  <input class="title" id="thirt-input" class="item"></input>
+		<ul class=”characters”>
+			 <li>
+			   <input class="itemName" type=”checkbox” data-index=”0" id=”item0">
+			   <label class="itemName" for=”item0">Mickey</label>
+			 </li>
+			 
+			 <li>
+			   <input class="itemName" type=”checkbox” data-index=”1" id=”item1">
+			   <label class="itemName" for=”item1">Minnie</label>
+			 </li>
+			 
+			 <li>
+			   <input class="itemName" type=”checkbox” data-index=”2" id=”item2">
+			   <label class="itemName" for=”item2">Goofy</label>
+			 </li>
+		</ul>-->
+		
+		Event Delegation.
+		<ul class="characters"> // PARENT - ALWAYS ON THE PAGE
+		
+		</ul>
+
+    </form>
+ <!--
+    <form class="item" id="second-form">
+      <input class="title" id="second-input"></input>
+    </form>
+	-->
+ </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script type="text/javascript">
+	'use strict'
+	
+			//Event Delegation.
+            //https://medium.com/@bretdoucette/part-4-what-is-event-delegation-in-javascript-f5c8c0de2983
+			function toggleDone (event) {
+				console.log(event.target)
+			} 
+			const characterList = document.querySelector('.characters');
+			characterList.addEventListener('click', toggleDone);
+			
+			setTimeout(()=>{
+			characterList.innerHTML=
+				`
+				<li>
+				   <input type="checkbox" data-index=”0" id="char0"> //CHILD 1
+				   <label for="char0">Mickey</label>
+				 </li>
+				 
+				 <li>
+				   <input type="checkbox” data-index=”1" id="char1"> //CHILD 2
+				   <label for="char1">Minnie</label>
+				 </li>
+				 
+				 <li>
+				   <input type="checkbox” data-index=”2" id="char2"> //CHILD 3
+				   <label for="char2">Goofy</label>
+				 </li>
+				
+				`;
+			
+			}, 5000);
+
+
+			const beforeCreate = document.querySelectorAll('input');
+			[...beforeCreate].forEach(i=>i.addEventListener('click',(e)=>{
+
+			    console.log("beforeCreate:::", e)
+
+            }))
+			
+		
+		
+      // Javascript codes goes here
+	  /*
+	  document.getElementById('first-input').addEventListener('mouseover', (e)=>{
+	  
+		console.log('inpute::',e.target.id);
+		console.log('inpute::',e.currentTarget.id)
+	  }, false)
+	  */
+	  
+	  
+	  //let querySelectorElemts = document.querySelectorAll('input');
+	  /*let querySelectorElemts = document.getElementsByClassName('itemName');
+	  [...querySelectorElemts].forEach(item=>item.addEventListener('click',(event)=>{
+		console.log("event.target.matches(‘input’)", event.target.matches('input'))
+		if (!event.target.matches('input')) return;
+		console.log(event.target)
+	  
+	  }))
+	  */
+	  /*
+	  let elements = document.getElementsByClassName('item');
+	  //[...elements].forEach(i=>{console.log("restParam::",i)})
+	  for(let element of elements){
+		element.addEventListener('click', (event)=>{
+		
+			console.log(event.target.id, '   ', event.currentTarget.id, this, event)
+		},{once:false,passive:false, capture:true})
+	  }
+	  
+	  */
+	  /*
+	  document.getElementById('first-input').addEventListener('click',(e)=>{
+	  
+		console.log("inpute::",e.target.id, e.type, e.currentTarget.id, e.target.value);
+		//e.currentTarget.removeEventListener(e.type, ()=>{
+			//console.log("form::",e.currentTarget.id)
+		//});
+		
+	  
+	  }, {once: true,passive: true,capture: false})
+	  document.getElementById('first-form').addEventListener('click',(e)=>{
+	  
+		console.log("form::",e.target.id, e.type, e.currentTarget.id, e.target.value);
+		//e.currentTarget.removeEventListener(e.type, ()=>{
+			//console.log("form::",e.currentTarget.id)
+		//});
+		
+	  
+	  }, {once: true,passive: true,capture: false})
+	  */
+	  
+	  /*
+	  document.getElementById('first-input').addEventListener('click', (e)=>{
+	  
+		console.log('inpute::',e.target.id);
+		console.log('inpute::',e.currentTarget.id)
+	  })
+	  
+	  document.getElementById('first-form').addEventListener('click',(e)=>{
+	  
+		console.log("form::",e.target.id);
+		console.log("form::",e.currentTarget.id)
+	  
+	  })
+	  */
+	  /*
+	  document.querySelector('input').addEventListener('click', (event)=>{
+		console.log('getQuerySelector:====', event.target.id)
+		console.log('getQuerySelector:====', event.currentTarget.id)
+	  
+	  })
+	  
+	  document.querySelector('form').addEventListener('click',(event)=>{
+	  console.log('getQuerySelector:2', event.target.id)
+		console.log('getQuerySelector:2', event.currentTarget.id)
+	  
+	  })
+	  */
+	  /*
+		$('input').click(function(event) {
+		  console.log("event.target.id::",event.target.id)
+		  console.log("event.currentTarget.id11::",event.currentTarget.id)
+		});
+
+		$('form').click(function(event) {
+		  console.log("event.currentTarget.id::",event.currentTarget.id)
+		});
+		*/
+    </script>
+  </body>
+</html>
