@@ -1,0 +1,320 @@
+*{
+	Box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+.otherCss{
+	width : 200px;
+	height:200px;
+	background-color:red;
+	display:flex;
+	align-items : center;
+	justify-content:center;
+	//Box-shadow:h-shadow v-shadow blur spread color inset;
+	box-shadow:10px 10px 5px 2px #000 ;
+	//box-shadow:10px 10px 5px 2px #000, -10px -10px 5px 2px #000 ;
+	//box-shadow:10px 10px 5px 2px #000 inset
+	
+	
+	
+}
+
+
+#box1 {
+	width:300px;
+	height:200px;
+	margin-top:100px;
+	//background-color:blue;
+	background: linear-gradient(top, #000 0%, #fff 100%);
+	background:-moz-linear-gradient(top, #000 0%, #fff 100%);
+	background:-webkit-linear-gradient(top, #000 0%, #fff 100%);
+	background:-o-linear-gradient(top, #000 0%, #fff 100%);
+	background:-ms-linear-gradient(top, #000 0%, #fff 100%);
+	background:-moz-linear-gradient(top, #000 0%, #fff 100%);
+	
+	
+	transform :  rotateX(180deg);
+}
+
+
+#box2 {
+	width:300px;
+	height:200px;
+	margin-top:100px;
+	//background-color:blue;
+	background: linear-gradient(left, #000 0%, #ddd 50%, #fff 100%);
+	background:-moz-linear-gradient(left, #000 0%, #ddd 50%, #fff 100%);
+	background:-webkit-linear-gradient(left, #000 0%, #ddd 50%, #fff 100%);
+	background:-o-linear-gradient(left, #000 0%, #ddd 50%, #fff 100%);
+	background:-ms-linear-gradient(left, #000 0%, #ddd 50%, #fff 100%);
+	background:-moz-linear-gradient(left, #000 0%, #ddd 50%, #fff 100%);
+	
+	
+	/*
+	//Transform : translate(valueX,valueY);
+	//Transform : rotate (deg);
+	//Transform : RotateX(180deg)
+	//Transform : RotateY(180deg)
+	//Transform : scale (2 , 3);
+	//Transform : skew (10deg , 10deg);
+	//Transform : skewX(10deg);
+	//Transform : skewY(10deg);
+	
+	
+	
+	transform : translate(100px,200px);
+	transform :  rotate(20deg);
+	transform :  rotateY(180deg);
+	transform : scale(2 , 3);
+	transform:skew(10deg, 50deg)
+	transform: skewX(35deg);
+	*/
+	transform: skewY(35deg);
+}
+
+h1{
+	/*
+		//Transition: Property | duration | timing-function | delay
+		//Property=> width, height, color, ... , (all تمام خاصیت ها تحت تاثیر قرار میگیرند)
+		//duration=> time s, time ms
+		//timing-function=>(سرعت اجرای افکت)=>linear(از ابتدا تا انتها با سرعت ثابت)
+		//									=>Ease(پیشفرض- انیمیشن با سرعت کم شروع می کند زیاد میشود دوباره در انتها کم میشود)
+		//									=>ease-in(انیمیشن با سرعت کم شروع میشودو در انتها با سرعت زیاد خاتمه پیدا می کند)
+		//									=>ease-out(انمیشن با سرعت زیاد شروع میشود با سرعت کم به انتها میرشد)
+		//									=>ease-in-out(انیمیشن با سرعت کم شروع می شود وسط سرعت زیاد و در انتها کم میشود)
+		//									=>cubic-bezier(n,n,n,n)=>(مقادیر قابل استفاده 0و1 http://cubic-bezier.com)
+		//delay=>(برای انداختن مکث قبل از شروع انیمیشن)
+	*/
+
+	margin-top:100px;
+	width:100px;
+	height:100px;
+	Color:white; 
+	background-color:black;
+	
+	/*
+	-webkit-transition:  background-color 1s ease 0s;
+	-moz-transition: background-color 1s ease 0s;
+	transition: background-color 1s ease 0s;
+	*/
+	
+	-webkit-transition:  all 1s ease 0s;
+	-moz-transition: all 1s ease 0s;
+	transition: all 1s ease 0s;
+	
+}
+h1:hover{
+	background-color: brown;
+	width:150px;
+	height:150px;
+}
+
+/*
+media
+
+All=>این مقدار مخصوص تمامی آله ها میباشد. 
+Aural=>این نوع مدیا مخصوص آله های صوتی میباشد. 
+Barille=>این نوع مدیا مخصوص به آله های نابیانیان میشود. 
+Embossed=>Braille این نوع مدیا مخصوص برای چاپ خط های
+Handheld=>Tablet این نوع مدیا برای آله های قابل حمل از قبیل
+Print=>استفاده میشود. در مرورگرها میتوان از قسمت Printer این نوع مدیا برای ارایه استایل به -استفاده کنید. Print برای مشاهده یک صفحه در حالت print ویا Print Preview
+Projection=>این نوع مدیا برای ویدیو پروژکتور ها استفاده میشود.
+Screen=>این نوع مدیا مخصوص نمایش کامپیوتر میباشد.
+TV=>این نوع مدیا مخصوص نمایش در تلویزیون ها میباشد.
+
+
+*/
+
+
+
+/*
+@keyframes =>برای تعریف رفتار یک چرخه انیمیشن در CSS استفاده می شود
+
+ تعریف انیمیشن 
+@keyframes your-animation-name {
+     استایل های مربوط به انیمیشن 
+}
+
+اعمال انیمیشن روی عنصر 
+.element {
+    animation-name: your-animation-name;
+
+     و یا استفاده از روش مختصر نویسی 
+    animation: your-animation-name 1s ...
+}
+
+
+*/
+
+
+@keyframes keyFrameName{
+	
+	
+	/*
+	زمانی که می خواهید به اول و آخر یک انیمیشن اشاره کنید می توانید به جای 0% و 100% از کلمات کلیدی from و to استفاده کنید.
+	
+	
+	اگر مقدار ابتدایی و انتهایی نوشته نشود از المنت بالایی استفاده میشود منظ
+	*/
+0% {
+    left: 0;
+	top: 0;
+  }
+
+  25% {
+    left: 100px;
+	top: -100px;
+	background-color:red;
+	transform:rotate(90deg);
+	transform:scale(2,5);
+	transform:skew(20deg, 30deg);
+  }
+
+  50% {
+    left: 200px;
+	top: 0;
+	background-color:blue;
+	transform:rotate(0deg);
+	transform:scale(1,1);
+	transform:skew(50deg, 60deg);
+  }
+
+  75% {
+    left: 300px;
+	top: -100px;
+	background-color:red;
+	transform:rotate(90deg);
+	transform:scale(2,5);
+	transform:skew(20deg, 30deg);
+  }
+
+  100% {
+    left: 400px; top: 0;
+  }
+	
+	
+	
+	/*
+	مقادیر تکراری را میتوان به صورت زیر نوشت
+	البته در این حالت که کلیه مقادیر مثل هم هستن
+	
+	0%, 50%,100%{
+		
+		top:0
+	}
+	20%,70%{
+		top:60px
+	}
+	
+	
+	*/
+}
+
+
+
+
+@-webkit-keyframes keyFrameName {
+  0% {
+    left: 0;
+	top: 0;
+  }
+
+  25% {
+    left: 100px;
+	top: -100px;
+	background-color:red
+  }
+
+  50% {
+    left: 200px;
+	top: 0;
+	background-color:blue
+  }
+
+  75% {
+    left: 300px;
+	top: -100px;
+	background-color:red
+  }
+
+  100% {
+    left: 400px; top: 0;
+  }
+}
+
+
+
+
+
+.container {
+  margin: 30px auto;
+  min-width: 300px;
+  max-width: 500px;
+  padding: 6em 1em 0;
+  box-sizing: border-box;
+  background-color: white;
+  border: 1px solid #aaa;
+}
+.element {
+	position: relative;
+	left: 0;
+	top: 0;
+	padding: 20px;
+	width: 30px;
+	height: 30px;
+	background-color:#ddd;
+    /*
+    animation-name: keyFrameName;
+    animation-duration: 3s;
+	
+	
+	-webkit-animation: keyFrameName 3s ease-out-in both;
+	animation: keyFrameName 3s ease-out both;
+	*/
+
+
+}
+
+.container:hover .element {
+  -webkit-animation: keyFrameName 3s linear both;
+  animation: keyFrameName 3s linear both;
+}
+
+
+
+
+
+.text {
+  font-size: 3em;
+  font-weight: bold;
+  color: #0099cc;
+  
+}
+
+.container:hover .text {
+  transform-origin: right center;
+  animation: fall 4s infinite;
+}
+
+@keyframes fall {
+  from, 15% {
+    transform: rotate(0) translateX(0);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(.07, 2.02, .67, .57);
+  }
+  50%,
+  60% {
+    transform: rotate(-90deg) translateX(0);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(.13, .84, .82, 1);
+  }
+  85%,
+  to {
+    transform: rotate(-90deg) translateX(-200px);
+    opacity: 0;
+  }
+}
+	
+	
+	
+	

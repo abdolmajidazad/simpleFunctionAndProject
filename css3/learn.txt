@@ -1,0 +1,7 @@
+http://css-tricks.ir/reference/keyframes/
+
+
+http://css-tricks.ir/reference/timing-function_value/
+
+
+https://codepen.io/seyedi/pen/yYKBmq
