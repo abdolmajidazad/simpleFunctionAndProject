@@ -48,6 +48,201 @@ console.log("blockScope", blockScopeLet, blockScopeConst,blockScopeVar)
 
 
 //console.log("blockScope", blockScopeLet, blockScopeConst,blockScopeVar)
+
+
+
+var x = {a:1, b:{c:2, d:3, e:{f:4, g:[{h:5}]}}, i:[{j:6, k:{l:7}}]}
+
+
+function getRecursive (data){
+
+    let result = {};
+
+    function recursive(newData, param){
+//        if(Object.prototype.toString.call(newData) === '[object Array]'){
+//        if(Array.isArray(newData)){
+        if(newData && newData.constructor === Array){
+            for(let newParam of newData){
+                recursive(newParam)
+            }
+//        }else if(Object.prototype.toString.call(newData) === '[object Object]'){
+        }else if(newData && newData.constructor===Object){
+            for(let newParam in newData){
+                recursive(newData[newParam], newParam)
+            }
+        }else{
+            console.log("getRecursive::", newData)
+            result[param] = newData
+        }
+    }
+
+    recursive(data, '');
+    return result
+
+}
+    console.log("resultData:::",  getRecursive(x))
+
+
+function* getRecursiveGenerator(data, param){
+
+    if(data && data.constructor === Array){
+        for(let newData of data){
+            yield* getRecursiveGenerator(newData)
+        }
+
+    }else if(data && data.constructor === Object){
+        for(let newData in data){
+            yield *getRecursiveGenerator(data[newData] ,newData )
+        }
+    }else{
+        yield {
+            [param] : data
+        }
+    }
+}
+
+
+let getRecursiveGeneratorVar = getRecursiveGenerator(x);
+let bbbb = getRecursiveGeneratorVar.next();
+let rrrr = bbbb.value;
+while(!bbbb.done){
+    bbbb = getRecursiveGeneratorVar.next();
+    rrrr = {...rrrr , ...bbbb.value}
+}
+
+console.log("getRecursiveGeneratorVar::::", rrrr)
+
+
+
+
+var data = [
+    { id: "0" },
+    {
+        id: "1",
+        children: [
+            {
+                id: "1.1",
+                children: [
+                    {
+                        id: "1.1.1",
+                        children: [
+                            {
+                                id: "1.1.1.1",
+                                children: [
+                                    { id: "1.1.1.1.1" },
+                                    { id: "1.1.1.1.2" },
+                                    { id: "1.1.1.1.3" }
+                                ]
+                            },
+                            { id: "1.1.1.2" },
+                            { id: "1.1.1.3" }
+                        ]
+                    },
+                    { id: "1.1.2" },
+                    { id: "1.1.3" },
+                ]
+            },
+            { id: "1.2" },
+            { id: "1.3" }
+        ]
+    },
+    { id: "2" },
+    { id: "3" }
+];
+
+console.log("resultData:::",  getRecursive(data))
+function *processData(data){
+    if (!data) { return; }
+
+    for (let i = 0; i< data.length; i++){
+        let val = data[i];
+        yield val.id;
+
+        if (val.children) {
+            yield *processData(val.children);
+        }
+    }
+}
+
+let it = processData(data);
+let res = it.next();
+while(!res.done){
+    console.log("processData:::::",res.value);
+    res = it.next();
+}
+
+
+
+
+
+function test(){
+    let n = 0;
+    function nestedTest(time=10, callback){
+        setTimeout(()=>{
+            n++;
+            callback( n)
+        },time)
+    }
+    return nestedTest
+}
+var tt = test();
+tt(3000,function(n){
+    console.log("sssssss1111", n)
+});
+tt(100,function(n){
+    console.log("sssssss22222", n)
+});
+tt(100,function(n){
+    console.log("sssssss33333", n)
+});
+
+
+
+
+
+
+const categories = [
+    { name: 'tech', parent: null },
+    { name: 'hot_right_now', parent: 'tech' },
+    { name: 'upcomming_releases', parent: 'tech' },
+    { name: 'gadgets', parent: 'tech' },
+    { name: 'news', parent: null },
+    { name: 'social', parent: 'startups' },
+    { name: 'europe', parent: 'news' },
+    { name: 'asia', parent: 'news' },
+    { name: 'events', parent: 'news' },
+    { name: 'startups', parent: null },
+    { name: 'funding', parent: 'startups' },
+    { name: 'unicorns', parent: 'startups' },
+    { name: 'venture_capital', parent: 'funding' },
+    { name: 'crowdfunding', parent: 'funding' },
+    { name: 'usa', parent: 'news' }
+];
+
+
+
+const categoriesFunc = (data, parent=null)=>{
+
+    let result = {};
+    data
+        .filter(item => item.parent === parent)
+        .forEach(category=>{
+            result[category.name] = categoriesFunc(categories, category.name)
+        });
+    return result
+
+
+};
+console.log(categoriesFunc(categories))
+
+
+
+
+
+
+
+
+
 </script>
 </body>
 
