@@ -233,7 +233,41 @@ const categoriesFunc = (data, parent=null)=>{
 
 
 };
-console.log(categoriesFunc(categories))
+
+
+
+const testCategory = (data, parent=null)=>{
+
+let result = [];
+data.filter(i=> i.parent === parent).forEach(i=>{
+
+result.push({[i.name]:testCategory(categories, i.name)})
+
+})
+
+return result;
+
+}
+console.log("categoriesFunc:::",categoriesFunc(categories))
+console.log("testCategory:::",testCategory(categories))
+
+
+
+
+
+
+fetch('https://www.reddit.com/r/news/comments/5959v5/exceo_of_red_light_camera_firm_sentenced_to_14/.json',{method:"GET"})
+.then(resp=>resp.json()).then(resp=>{//
+//console.log("****************",fetchRecursive(resp)
+}).catch(error=>{})
+
+
+
+function fetchRecursive(){
+
+
+
+}
 
 
 

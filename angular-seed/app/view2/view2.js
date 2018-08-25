@@ -97,6 +97,45 @@ angular.module('myApp.view2', ['ngRoute'])
         }).catch(function (error) {
             console.log(error)
         });
+		
+		
+		
+		
+		
+		$scope.data = [
+			{ id: "0" },
+			{
+				id: "1",
+				children: [
+					{
+						id: "1.1",
+						children: [
+							{
+								id: "1.1.1",
+								children: [
+									{
+										id: "1.1.1.1",
+										children: [
+											{ id: "1.1.1.1.1" },
+											{ id: "1.1.1.1.2" },
+											{ id: "1.1.1.1.3" }
+										]
+									},
+									{ id: "1.1.1.2" },
+									{ id: "1.1.1.3" }
+								]
+							},
+							{ id: "1.1.2" },
+							{ id: "1.1.3" },
+						]
+					},
+					{ id: "1.2" },
+					{ id: "1.3" }
+				]
+			},
+			{ id: "2" },
+			{ id: "3" }
+		];
 
 
     }]);
