@@ -1,0 +1,40 @@
+<div class="form-group  col-md-12 col-sm-12 col-xs-12">
+    <label
+            for="color-picker-{{colorPickerConfig['id']}}"
+            class="col-form-label"
+            ng-class="{true:'col-sm-3' , false : 'col-sm-12'}[colorPickerConfig['showInput']]"
+    >{{colorPickerConfig['title'] |
+        translate}}
+        <div color-picker
+             class="ltr-data color-picker-div display-inline-block"
+             id="color-picker-{{colorPickerConfig['id']}}"
+             style="margin-top: 9px;"
+             color-picker-model="var"
+             color-picker-position="{{colorPickerConfig['position']}}"
+             color-picker-show-value="{{colorPickerConfig['showValue']}}"
+             color-picker-output-format="colorPickerConfig['outputFormat']"
+             color-picker-fixed-position="colorPickerConfig['fixedPosition']"
+             color-picker-show-input-spinner="{{colorPickerConfig['showInputSpinner']}}"
+             color-picker-spinner-rgba-steps="colorPickerConfig['spinnerRgbaSteps']"
+             color-picker-spinner-hsla-steps="colorPickerConfig['spinnerHslaSteps']"
+             color-picker-show-cancel-button="{{colorPickerConfig['showCancelButton']}}"
+             color-picker-cancel-button-class="{{colorPickerConfig['cancelButtonClass']}}"
+             ng-style="{
+             background:var,
+             top : ( colorPickerConfig['style'] && colorPickerConfig['style']['top']) ? colorPickerConfig['style']['top']  : 0 ,
+             left : ( colorPickerConfig['style'] && colorPickerConfig['style']['left']) ? colorPickerConfig['style']['left']  : -20
+             }">
+
+        </div>
+    </label>
+
+    <input
+            type="text"
+            class=" col-sm-9 form-control form-control-custom  ltr-data"
+            ng-if="colorPickerConfig['showInput']"
+            id="color-picker-{{colorPickerConfig['id']}}-inpute"
+            placeholder="#ffffff"
+            ng-change="sendColorHex()"
+            ng-model="var">
+    <small class="form-text text-muted"></small>
+</div>

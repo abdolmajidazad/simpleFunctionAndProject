@@ -1,0 +1,74 @@
+<style>
+    .sidebarSelectedItemTitle  {
+        width: 190px;
+    }
+</style>
+<div ng-if="infoContentShow">
+    <div class=" ltr-data info-header">
+        <div class="{{contentInformation['file'] ? (contentInformation['name'] | generateIcon:contentInformation)+'-image-16' : 'directory-image'}}">
+            <div class="image-content"></div>
+        </div>
+
+        <div class="info-header-title display-inline-block">
+            {{contentInformation['name']}}
+        </div>
+        <div class="display-inline-block header-menu close-icon" ng-click="changeInfoStatus()"></div>
+    </div>
+    <div class="file-image information">
+        <img ng-if="checkType(contentInformation['name'],contentInformation) == 'image'"
+             ng-src="{{contentInformation['downloadLink']}}" height="100%">
+        <div ng-if="checkType(contentInformation['name'],contentInformation) != 'image'"
+             class="{{contentInformation['file'] ? filterIcon(contentInformation['name'], contentInformation)+'-image-128' : 'directory-image-128'}} "></div>
+    </div>
+    <div class="padding-15">
+        <div class="col-md-12 info-content-items">
+            <div class="right-div">{{'type' | translate}}</div>
+            <div class="left-div">{{contentInformation['name'] | generateIcon:contentInformation}}</div>
+        </div>
+        <div class="col-md-12 info-content-items">
+            <div class="right-div">{{'last_modified' | translate}}</div>
+            <div class="left-div">{{contentInformation['modifyTime'] | toPersianDate}}</div>
+        </div>
+        <div ng-show="contentInformation['file']" class="col-md-12 info-content-items">
+            <div class="right-div">{{'size' | translate}}</div>
+            <div class="left-div">{{contentInformation['size'] |generateSize}}</div>
+        </div>
+    </div>
+
+    <div style="clear: both"></div>
+    <div ng-repeat="item in listOfItemSelected" ng-show="contentInformation['name'] !==item['name']" class="ltr-data">
+        <div
+                class="folder box-shadow box-item-file-folder "
+        >
+            <div class="folder-image {{item['name'] | generateIcon:item}}-image-16">
+                <div class="image-content"></div>
+            </div>
+            <div class="folder-title" ng-class="{true : 'sidebarSelectedItemTitle', false:''}[item['file']]">{{item['name']}}</div>
+            <div ng-show="item['file']" style="color: rgba(0, 0, 0, .54); font-size: 10px">{{item['size'] |generateSize}}</div>
+        </div>
+
+    </div>
+</div>
+
+<div ng-if="!infoContentShow">
+    <div class="ltr-data info-header">
+        <div class="directory-image">
+            <div class="image-content"></div>
+        </div>
+        <div class="info-header-title display-inline-block">
+            {{lastUrl | translate}}
+        </div>
+        <div class="display-inline-block header-menu close-icon" ng-click="changeInfoStatus()"></div>
+    </div>
+    <div class="file-image information bg-color-white">
+        <div class="review-image-128"></div>
+    </div>
+    <div class="padding-15">
+        <div class="col-md-12 info-content-items " style="text-align: center">
+            {{'select_a_file_or_folder_to_view_its_details' | translate}}.
+        </div>
+
+    </div>
+
+
+</div>

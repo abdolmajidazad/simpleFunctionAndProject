@@ -1,0 +1,87 @@
+<a id="accordion">
+    <div class=" sidebar-title-box">
+        <a ng-href="/dashboard" class="sidebar-title">
+
+            <img ng-src="views/resource/images/logo68.png" alt="" width="50">
+
+            <div class="form-link">
+                {{'website_title_panel' | translate}}
+            </div>
+            <div class="form-link">
+                &nbsp;|&nbsp;
+            </div>
+            <div class="form-link color-seller">
+                {{'sales_office' | translate}}
+            </div>
+        </a>
+        <div class="image-menu arrow-menu-left-icon mobile-block closeSideBar" ng-click="toggleFunc()"></div>
+    </div>
+    <div class="sidebarItemsBox">
+        <div
+                class="nav-pills flex-column"
+                ng-repeat="menu in menuBar"
+                ng-style="{borderBottom : menu['isFooter'] ? '1px solid #d6d6d6' : ''}">
+            <a
+                    class="nav-link color-black nav-item overflow-text"
+                    ng-class="{true : 'active', false:''}[selectedMenuForShow[1] == menu['id']]"
+                    role="tab"
+                    ng-if="menu['available']"
+
+                    ng-href="{{menu['url'] ? menu['url']  :  ''}}"
+
+            >
+
+                <div
+                        ng-click="menu['view'] ? loadProductActions(menu) : loadAccordion(menu['title'])"
+                        class="faq-toggle collapsed"
+
+                >
+                    <div
+                            class="image-menu {{menu['img']}}-icon"
+
+                    ></div>
+                    <div class="display-inline-block">
+                        {{menu['title'] | translate}}
+                    </div>
+
+                    <div
+                            ng-if="menu['subMenu'].length"
+                            class="image-menu  float-left arrow-menu-left-icon"
+                            ng-style="{transform: menu['title'] === selectedMenu ? 'rotate(-90deg)' : ''}"
+
+                    ></div>
+                </div>
+
+            </a>
+
+            <div id="{{menu['title']}}"
+                 class="panel-collapse collapse"
+                 role="tabpanel"
+                 ng-if="!menu['url']"
+                 aria-labelledby="{{menu['title']+'heading'}}">
+                <div
+                        class="panel-body nav-pills flex-column"
+                        style="border-bottom: 1px solid #d6d6d6"
+                >
+                    <a
+                            ng-repeat="subMenu in menu['subMenu']"
+                            ng-class="{true : 'active', false:''}[subMenu['id'] && selectedMenuForShow[2] == subMenu['id']]"
+                            class="sub-menu-items"
+                            ng-if="subMenu['available']"
+                            ng-href="{{subMenu['url']}}"
+                    >
+                        <div
+                                class="image-menu {{subMenu['img']}}-icon"
+                        ></div>
+                        <div style="width:100%;" ng-click="reloadPage()" class="display-inline-block">
+                            {{subMenu['title'] | translate}}
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</a>
+

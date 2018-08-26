@@ -1,0 +1,28 @@
+<nav aria-label="breadcrumb " class="breadcrumbDrive rtl-data">
+    <ol class="breadcrumb">
+        <!--<li class="breadcrumb-item bold-font">-->
+            <!--<a ng-href="/dashboard">-->
+                <!--{{'dashboard' | translate}}-->
+            <!--</a>-->
+        <!--</li>-->
+        <li class="breadcrumb-item" ng-repeat="bread in breadcrumb">
+            <span ng-if="!$last && bread['href']">
+                <a ng-href="{{bread['href']}}">{{bread['name'] | translate}}</a>
+            </span>
+            <span ng-if="$last || !bread['href']">
+                    {{bread['name'] |translate}}
+            </span>
+        </li>
+        <button ng-if="otherPage" class="btn  pointer icon-btn float-left"  ng-click="close()">
+            <div class="display-inline-block">
+               {{'back' | translate}} &nbsp;&nbsp;
+            </div>
+            <div class="action-icon ">
+                <div class="action-box arrow_back-icon"></div>
+            </div>
+
+        </button>
+
+    </ol>
+
+</nav>

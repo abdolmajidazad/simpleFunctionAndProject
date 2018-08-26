@@ -15,8 +15,7 @@ angular.module('myApp.version.main-comment-directive', [])
                         <div ng-if="item.children" >
                             <main-comment-directive comment-list="item.children"></main-comment-directive>
                         </div>
-                        
-                    
+                 
                     </div>
             
             `

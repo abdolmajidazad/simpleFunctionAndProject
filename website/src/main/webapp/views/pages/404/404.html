@@ -1,0 +1,25 @@
+<div class="application-loading" ng-animate-children></div>
+<update-title title="{{'website_title' | translate}} | {{'page_not_found' | translate}}"></update-title>
+
+<div class="not-found-page" id="not-found-page">
+    <img ng-src="views/resource/images/notFound.png" alt="" width="177">
+    <div class="not-found-code">404</div>
+    <div class="not-found-text margin-bottom-12">{{'page_not_found' | translate}}</div>
+    <div class="not-found-timer">
+        <div class="not-found-desc margin-bottom-12">{{'page_not_found_desc_1' | translate}}</div>
+        <div class="not-found-desc margin-bottom-12">&nbsp;{{timer}}&nbsp;</div>
+        <div class="not-found-desc margin-bottom-12">{{'page_not_found_desc_2' | translate}}</div>
+    </div>
+    <div class="not-found-desc margin-bottom-12">{{'page_not_found_desc_3' | translate}}</div>
+    <button ng-click="back()"  class="seller-btn">
+        <div class="btn-content">
+            <!--<div class="action-icon">-->
+                <!--<div class="action-box home-icon-white" ng-class="{true:'', false:''}[icon]"></div>-->
+            <!--</div>-->
+            <div class="btn-title">
+                {{'back' | translate}}
+            </div>
+        </div>
+    </button>
+</div>
+

@@ -1,0 +1,242 @@
+{
+    "development" : {
+        "index" : {
+            "css" : [
+                {
+                    "path" : "library/bower_components/nprogress/nprogress.css?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/angular-colorpicker-directive/css/color-picker.css?1535267630534",
+                    "position" : "end"
+                },
+                {
+                    "path" : "library/bower_components/angular-rateit/dist/ng-rateit.css?1535267630534",
+                    "position" : "end"
+                },
+
+                {
+                    "path" : "library/persian-datepicker/dist/css/persian-datepicker.css?1535267630534",
+                    "position" : "end"
+                },
+                {
+                    "path" : "library/bower_components/nprogress/nprogress.css?1535267630534",
+                    "position" : "end"
+                },
+
+                {
+                    "path" : "views/resource/css/bundle.css?1535267630534",
+                    "position" : "end"
+                }
+            ],
+            "js" : [
+
+                {
+                    "path" : "library/bower_components/angular-translate/angular-translate.min.js?1535267630534",
+                    "position" : "start"
+                },{
+                    "path" : "library/bower_components/angular-update-meta/dist/update-meta.min.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/nprogress/nprogress.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/js-sha1/build/sha1.min.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-bootstrap-contextmenu/contextMenu.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-progress-arc/angular-progress-arc.min.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/angular-colorpicker-directive/js/color-picker.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/ngMask/dist/ngMask.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-ui-sortable/sortable.min.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-relative-date/dist/angular-relative-date.min.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-rateit/dist/ng-rateit.min.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/moment-jalaali/build/moment-jalaali.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-recaptcha/release/angular-recaptcha.min.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/persian-date/dist/persian-date.js?1535267630534",
+                    "position" : "end"
+                },
+                {
+                    "path" : "library/bower_components/nprogress/nprogress.js?1535267630534",
+                    "position" : "end"
+                },
+                {
+                    "path" : "library/persian-datepicker/dist/js/persian-datepicker.min.js?1535267630534",
+                    "position" : "end"
+                }
+            ]
+        },
+        "pages" : {
+            "root" : {
+                "css" : [
+                ],
+                "js" : [
+
+                    "views/pages/home/home.js?1535267630534",
+                    "views/tpl/footer/footer.js?1535267630534",
+                    "views/tpl/sidebar/left/leftSidebar.js?1535267630534",
+                    "views/tpl/sidebar/right/rightSidebar.js?1535267630534",
+                    "views/tpl/header/header.js?1535267630534",
+                    "views/tpl/menubar/menubar.js?1535267630534"
+                ]
+            },
+            "notFound" : {
+                "css" : [],
+                "js" : [
+
+
+                    "views/pages/404/404.js?1535267630534"
+                ]
+            },
+            "home" : {
+                "css" : [],
+                "js" : [
+                    "views/pages/home/home.js?1535267630534"
+                ]
+            },
+            "aboutUs" : {
+                "css" : [],
+                "js" : [
+                    "views/pages/aboutUs/aboutUs.js?1535267630534"
+                ]
+            }
+        }
+
+
+    },
+    "production" : {
+        "index" : {
+            "css" : [
+                {
+                    "path" : "library/bower_components/nprogress/nprogress.css?1535267630534",
+                    "position" : "end"
+                },
+                {
+                    "path" : "library/angular-colorpicker-directive/css/color-picker.css?1535267630534",
+                    "position" : "end"
+                },
+                {
+                    "path" : "library/bower_components/angular-rateit/dist/ng-rateit.css?1535267630534",
+                    "position" : "end"
+                },
+                {
+                    "path" : "library/persian-datepicker/dist/css/persian-datepicker.css?1535267630534",
+                    "position" : "end"
+                },
+                {
+                    "path" : "library/bower_components/nprogress/nprogress.css?1535267630534",
+                    "position" : "end"
+                },
+                {
+                    "path" : "views/resource/css/bundle.css?1535267630534",
+                    "position" : "end"
+                }
+            ],
+            "js" : [
+
+                {
+                    "path" : "library/bower_components/angular-translate/angular-translate.min.js?1535267630534",
+                    "position" : "start"
+                },{
+                    "path" : "library/bower_components/angular-update-meta/dist/update-meta.min.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/nprogress/nprogress.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/js-sha1/build/sha1.min.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-bootstrap-contextmenu/contextMenu.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-progress-arc/angular-progress-arc.min.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/angular-colorpicker-directive/js/color-picker.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/ngMask/dist/ngMask.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-ui-sortable/sortable.min.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-relative-date/dist/angular-relative-date.min.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-rateit/dist/ng-rateit.min.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/moment-jalaali/build/moment-jalaali.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-recaptcha/release/angular-recaptcha.min.js?1535267630534",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/persian-date/dist/persian-date.min.js?1535267630534",
+                    "position" : "end"
+                },
+                {
+                    "path" : "library/bower_components/nprogress/nprogress.js?1535267630534",
+                    "position" : "end"
+                },
+                {
+                    "path" : "library/persian-datepicker/dist/js/persian-datepicker.min.js?1535267630534",
+                    "position" : "end"
+                }
+            ]
+        },
+        "pages" : {
+            "root" : {
+                "css" : [
+                ],
+                "js" : [
+                    "library/pageBundle/js/home.min.js?1535267630534",
+                    "library/pageBundle/js/footer.min.js?1535267630534",
+                    "library/pageBundle/js/leftSidebar.min.js?1535267630534",
+                    "library/pageBundle/js/rightSidebar.min.js?1535267630534",
+                    "library/pageBundle/js/header.min.js?1535267630534",
+                    "library/pageBundle/js/menubar.min.js?1535267630534"
+                ]
+            },
+            "notFound" : {
+                "css" : [],
+                "js" : [
+
+
+                    "library/pageBundle/js/404.min.js?1535267630534"
+                ]
+            },
+            "home" : {
+                "css" : [],
+                "js" : [
+                    "library/pageBundle/js/home.min.js?1535267630534"
+                ]
+            },
+            "aboutUs" : {
+                "css" : [],
+                "js" : [
+                    "library/pageBundle/js/aboutUs.min.js?1535267630534"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,242 @@
+{
+    "development" : {
+        "index" : {
+            "css" : [
+                {
+                    "path" : "library/bower_components/nprogress/nprogress.css?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/angular-colorpicker-directive/css/color-picker.css?@@timeStampVersion",
+                    "position" : "end"
+                },
+                {
+                    "path" : "library/bower_components/angular-rateit/dist/ng-rateit.css?@@timeStampVersion",
+                    "position" : "end"
+                },
+
+                {
+                    "path" : "library/persian-datepicker/dist/css/persian-datepicker.css?@@timeStampVersion",
+                    "position" : "end"
+                },
+                {
+                    "path" : "library/bower_components/nprogress/nprogress.css?@@timeStampVersion",
+                    "position" : "end"
+                },
+
+                {
+                    "path" : "views/resource/css/bundle.css?@@timeStampVersion",
+                    "position" : "end"
+                }
+            ],
+            "js" : [
+
+                {
+                    "path" : "library/bower_components/angular-translate/angular-translate.min.js?@@timeStampVersion",
+                    "position" : "start"
+                },{
+                    "path" : "library/bower_components/angular-update-meta/dist/update-meta.min.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/nprogress/nprogress.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/js-sha1/build/sha1.min.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-bootstrap-contextmenu/contextMenu.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-progress-arc/angular-progress-arc.min.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/angular-colorpicker-directive/js/color-picker.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/ngMask/dist/ngMask.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-ui-sortable/sortable.min.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-relative-date/dist/angular-relative-date.min.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-rateit/dist/ng-rateit.min.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/moment-jalaali/build/moment-jalaali.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-recaptcha/release/angular-recaptcha.min.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/persian-date/dist/persian-date.js?@@timeStampVersion",
+                    "position" : "end"
+                },
+                {
+                    "path" : "library/bower_components/nprogress/nprogress.js?@@timeStampVersion",
+                    "position" : "end"
+                },
+                {
+                    "path" : "library/persian-datepicker/dist/js/persian-datepicker.min.js?@@timeStampVersion",
+                    "position" : "end"
+                }
+            ]
+        },
+        "pages" : {
+            "root" : {
+                "css" : [
+                ],
+                "js" : [
+
+                    "views/pages/home/home.js?@@timeStampVersion",
+                    "views/tpl/footer/footer.js?@@timeStampVersion",
+                    "views/tpl/sidebar/left/leftSidebar.js?@@timeStampVersion",
+                    "views/tpl/sidebar/right/rightSidebar.js?@@timeStampVersion",
+                    "views/tpl/header/header.js?@@timeStampVersion",
+                    "views/tpl/menubar/menubar.js?@@timeStampVersion"
+                ]
+            },
+            "notFound" : {
+                "css" : [],
+                "js" : [
+
+
+                    "views/pages/404/404.js?@@timeStampVersion"
+                ]
+            },
+            "home" : {
+                "css" : [],
+                "js" : [
+                    "views/pages/home/home.js?@@timeStampVersion"
+                ]
+            },
+            "aboutUs" : {
+                "css" : [],
+                "js" : [
+                    "views/pages/aboutUs/aboutUs.js?@@timeStampVersion"
+                ]
+            }
+        }
+
+
+    },
+    "production" : {
+        "index" : {
+            "css" : [
+                {
+                    "path" : "library/bower_components/nprogress/nprogress.css?@@timeStampVersion",
+                    "position" : "end"
+                },
+                {
+                    "path" : "library/angular-colorpicker-directive/css/color-picker.css?@@timeStampVersion",
+                    "position" : "end"
+                },
+                {
+                    "path" : "library/bower_components/angular-rateit/dist/ng-rateit.css?@@timeStampVersion",
+                    "position" : "end"
+                },
+                {
+                    "path" : "library/persian-datepicker/dist/css/persian-datepicker.css?@@timeStampVersion",
+                    "position" : "end"
+                },
+                {
+                    "path" : "library/bower_components/nprogress/nprogress.css?@@timeStampVersion",
+                    "position" : "end"
+                },
+                {
+                    "path" : "views/resource/css/bundle.css?@@timeStampVersion",
+                    "position" : "end"
+                }
+            ],
+            "js" : [
+
+                {
+                    "path" : "library/bower_components/angular-translate/angular-translate.min.js?@@timeStampVersion",
+                    "position" : "start"
+                },{
+                    "path" : "library/bower_components/angular-update-meta/dist/update-meta.min.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/nprogress/nprogress.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/js-sha1/build/sha1.min.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-bootstrap-contextmenu/contextMenu.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-progress-arc/angular-progress-arc.min.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/angular-colorpicker-directive/js/color-picker.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/ngMask/dist/ngMask.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-ui-sortable/sortable.min.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-relative-date/dist/angular-relative-date.min.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-rateit/dist/ng-rateit.min.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/moment-jalaali/build/moment-jalaali.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/angular-recaptcha/release/angular-recaptcha.min.js?@@timeStampVersion",
+                    "position" : "end"
+                },{
+                    "path" : "library/bower_components/persian-date/dist/persian-date.min.js?@@timeStampVersion",
+                    "position" : "end"
+                },
+                {
+                    "path" : "library/bower_components/nprogress/nprogress.js?@@timeStampVersion",
+                    "position" : "end"
+                },
+                {
+                    "path" : "library/persian-datepicker/dist/js/persian-datepicker.min.js?@@timeStampVersion",
+                    "position" : "end"
+                }
+            ]
+        },
+        "pages" : {
+            "root" : {
+                "css" : [
+                ],
+                "js" : [
+                    "library/pageBundle/js/home.min.js?@@timeStampVersion",
+                    "library/pageBundle/js/footer.min.js?@@timeStampVersion",
+                    "library/pageBundle/js/leftSidebar.min.js?@@timeStampVersion",
+                    "library/pageBundle/js/rightSidebar.min.js?@@timeStampVersion",
+                    "library/pageBundle/js/header.min.js?@@timeStampVersion",
+                    "library/pageBundle/js/menubar.min.js?@@timeStampVersion"
+                ]
+            },
+            "notFound" : {
+                "css" : [],
+                "js" : [
+
+
+                    "library/pageBundle/js/404.min.js?@@timeStampVersion"
+                ]
+            },
+            "home" : {
+                "css" : [],
+                "js" : [
+                    "library/pageBundle/js/home.min.js?@@timeStampVersion"
+                ]
+            },
+            "aboutUs" : {
+                "css" : [],
+                "js" : [
+                    "library/pageBundle/js/aboutUs.min.js?@@timeStampVersion"
+                ]
+            }
+        }
+    }
+}

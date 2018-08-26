@@ -1,0 +1,65 @@
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/IRANSansWeb(FaNum).eot");
+    src: url("") format('embedded-opentype'),  /* IE6-8 */
+    url("../fonts/IRANSansWeb(FaNum).woff2") format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+    url("../fonts/IRANSansWeb(FaNum).woff") format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url("../fonts/IRANSansWeb(FaNum).ttf") format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: bold;
+    src: url("../fonts/IRANSansWeb(FaNum)_Bold.eot");
+    src: url("") format('embedded-opentype'),  /* IE6-8 */
+    url("../fonts/IRANSansWeb(FaNum)_Bold.woff2") format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+    url("../fonts/IRANSansWeb(FaNum)_Bold.woff") format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url("../fonts/IRANSansWeb(FaNum)_Bold.ttf") format('truetype');
+}
+@charset "utf-8";
+:root {
+    --main-color: #AD1457;
+    --main-error-color: #FF0000;
+    --main-border-color: rgb(214, 214, 214);
+    --main-icon-color: #000;
+    --main-icon-other-color: #fff;
+    --main-body-color: #f5f5f5;
+    --main-body-other-section-color: #f8f9fa;
+    --main-body-font-color: #000000;
+    --main-body-font-link-color: #2427ff;
+    --main-content-color: #fff
+}
+
+html, body {
+    font-family: IRANSans, Tahoma, sans-serif !important;
+    font-size: 12px;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+
+body {
+    background-color: #fff;
+    color: var(--main-body-font-color);
+    overflow: hidden;
+}
+
+.main-content {
+    padding: 10px;
+    position: relative;
+    background-color: var(--main-content-color);
+}
+
+.main-content-body{
+    background-color: #d51d16;
+    min-height: 200px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #fff;
+    font-size: 100px;
+}
+
