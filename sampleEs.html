@@ -11,10 +11,10 @@ console.log(Array(100).fill(1).map((i,index)=>index+1000))
 console.log(Array.of(2,3,4))
 
 function doSomthing() {
-	console.log([...arguments])
-	console.log(arguments)
+	console.log("[...arguments]:::",[...arguments])
+	console.log("arguments:::",arguments)
 	var args = Array.from(arguments);	
-	console.log(args)
+	console.log("Array.from:::",args)
 }
 doSomthing(1,2,3,4,5);
 
