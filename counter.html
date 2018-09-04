@@ -1,0 +1,69 @@
+<html>
+<head></head>
+<body>
+
+<style>
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    h1{
+        margin-left: 20px;
+    }
+</style>
+
+<div>Number</div>
+<input type="number"  id="input-id">
+<h1 id="counter-id"></h1>
+<script>
+    let min = 0
+    document.getElementById('input-id').addEventListener('input', ()=>{
+
+        /**
+         *meghdare aval id jaee ke mikhay neshon bedi adad ra
+         * meghdare doovom start
+         * meghdare sevom adadi ke mikhay nehson bedi
+         * meghdare akhar ham zamane ke milisecound hast
+         *
+         */
+        let max = parseInt(document.getElementById('input-id').value);
+        if(max){
+            animateValue('counter-id',min,max , 2000);
+            min =  max;
+        }else{
+            document.getElementById('counter-id').innerHTML = 0;
+            min=0;
+        }
+
+
+
+    });
+    function animateValue(id, start, end, duration) {
+        let obj = document.getElementById(id);
+        let range = end - start;
+        let current = start;
+        let increment = end > start ? 1 : -1;
+        let stepTime = Math.abs(Math.floor(duration / range));
+        if (end === 0) {
+            obj.innerHTML = end;
+        } else {
+            let timer = setInterval(function () {
+                current += increment;
+                if (obj) {
+                    obj.innerHTML = current;
+                    if (current === end) {
+                        clearInterval(timer);
+                    }
+                } else {
+                    clearInterval(timer);
+                }
+            }, stepTime);
+        }
+    }
+
+
+
+</script>
+</body>
+</html>
