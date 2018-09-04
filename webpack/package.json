@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "development":"webpack --watch --mode development ./src/index.js --output ./dist/bundle.js",
-    "production":"webpack --mode production ./src/index.js --output ./dist/bundle.js"
+    "development": "webpack --watch --mode development ./src/index.js --output ./dist/bundle.js",
+    "production": "webpack --mode production ./src/index.js --output ./dist/bundle.js --module-bind js=babel-loader"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^8.0.2",
     "webpack": "^4.17.2",
     "webpack-cli": "^3.1.0"
   }
