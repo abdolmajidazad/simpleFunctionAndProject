@@ -277,6 +277,303 @@ function fetchRecursive(){
 
 
 
+
+
+//proxy in javasript
+
+let ali = {
+	name :"majid",
+	age:10,
+	salary:10000
+
+}
+
+
+let pAli  = new Proxy(ali, {});
+
+console.log("proxy ali && pAli::",pAli.name=== ali.name)
+pAli['name'] = "change majid by proxy";
+
+console.log("chnage name by proxy::", ali.name);
+console.log("get data in proxy with reflect::", Reflect.get(pAli, 'age'))
+console.log("get data with []:" ,pAli['age'])
+
+
+
+
+let oAli =  new Proxy(ali,{
+
+	get : function(target, prop, recever){
+		if(prop === 'salary'){
+			return 'shoma ejaze dastrasi be in meghadr ra nadarid'
+
+
+		}else if(!target[prop]){
+		
+			return 'in meghdar vojod nadarad';
+		
+		}else{
+		
+			return target[prop]
+		
+		}
+		console.log("get in proxy::", target, prop, recever)
+	
+	},
+	set : function(target, prop, value, recever){
+	
+		if(prop === 'age' && value>100){
+			//throw new ReferenceError('meghdar nemitavanad bishtar az 100 bashad.')
+			throw new Error('meghdare nemitavanad bishtar az 100 bashad')
+			return false;
+		
+		}else{
+			target[prop] = value;
+			return true;
+		
+		}
+	
+	}
+
+})
+
+
+
+
+
+console.log("oAli:::", oAli.age)
+console.log("oAli with undefine prop::", oAli.sample)
+console.log("oAli permission prop salary" , oAli.salary);
+
+
+
+oAli.name = 'majid Set'
+console.log("oAli set name : ", oAli.name);
+
+
+try{
+
+oAli.age = 200;
+
+
+}catch(e){
+
+console.log("catch for set age grater than 100", e)
+}
+oAli.age = 99;
+console.log("oAli set age:", oAli.age)
+
+/*
+	proxy = new Proxy({} {
+		  apply: Reflect.apply,
+		  construct: Rflect.construct,
+		  definePropery: Reflect.defineProrty,
+		  getOwnPopertyDescriptor: Reflect.getOwnPropertyDescriptor,
+		  deleteProperty: Reflect.deletePoperty,
+		  getPrototypeOf:Reflect.getPrototypeOf,
+		  setPrototypeOf: Reflect.setPrototypeOf,
+		  isExtensible: Reflect.isExtensible,
+		  preventExtensions: Reflect.preventExtensions,
+		  get: Reflect.get,
+		  set: Reflect.set,
+		  has:Reflect.has,
+		  ownKeys Reflect.ownKeys,
+	});
+*/
+
+// Reflect
+
+
+function sum(a, b=a){
+
+ return a**b
+}
+
+
+console.log("before reflect ==> sum.apply",sum.apply(undefined, [2]))
+console.log("before reflect ==> sum.call", sum.call(undefined,2))
+
+console.log("Reflect :: apply::", Reflect.apply(sum, undefined, [2]))
+//create instanse of class with new and reflect
+
+
+class Car{
+
+	constructor(name='benz', price=0){
+	
+		this.name = name;
+		this.price = price
+	
+	}
+	getInfo(){
+		return `the price for ${this.name} is ${this.price}`	
+	 
+	}
+
+}
+
+
+
+let benz = new Car('benz', 1000);
+if(benz instanceof Car){
+	console.log('car instanceof with new:',benz);
+	console.log('car instanceof with new getInfo:',benz.getInfo())
+}
+
+let benz2 = Reflect.construct(Car,['benz2', 2000]);
+
+if(benz2 instanceof Car){
+	let ee = {test : 10};
+	console.log('car instanceof with reflect.construct:', benz2, benz2.constructor === Object, ee.constructor===Object);
+	console.log('car instanceof with reflect.construct get info:', benz2.getInfo())
+}
+
+
+//Extensible   tosepazir
+let emptyObject = {};
+console.log("isExtensible Reflect object::",Reflect.isExtensible(emptyObject));
+let sealed = Object.seal({});
+console.log('isExtensible Reflect object::', Reflect.isExtensible(sealed));
+let freezen = Object.freeze({});
+console.log('isExtensible Reflect freeze::', Reflect.isExtensible(freezen))
+
+
+
+let aEmpty = {}
+Reflect.preventExtensions(aEmpty)
+console.log("isExtention Reflect Reflect.preventExtensions::", Reflect.isExtensible(aEmpty))
+
+let bEmpty = {};
+Object.preventExtensions(bEmpty);
+console.log("isExtensible Reflect Object.preventExtensions::", Reflect.isExtensible(bEmpty))
+
+
+
+
+
+
+
+
+//define property
+
+let defineProp = {}
+
+Reflect.defineProperty(defineProp ,'newProp' ,{
+
+	value : 'newValuForNewProp Reflect.defineProperty',
+	configurable : true,
+	writable : false,
+	enumerable : true
+
+});
+
+
+Object.defineProperty(defineProp, 'newProp1',{
+
+	value:'new value for new prop1 Object.defineProperty',
+	configurable : true,
+	writable : false ,
+	enumerable : true
+})
+
+
+console.log("define property with reflect and object defineProperty", defineProp)
+
+console.log("getOwnPropertyDescriptor Reflect::: ", Reflect.getOwnPropertyDescriptor(defineProp, 'newProp'))
+
+
+console.log("getOwnPropertyDescriptor Object:::", Object.getOwnPropertyDescriptor(defineProp,'newProp1'))
+console.log('delete with delete not exist::', delete defineProp['xx']);
+
+console.log('delete with Reflect not exist::', Reflect.deleteProperty(defineProp, 'xx'))
+console.log("has Reflect ::", Reflect.has(defineProp, 'newProp1'))
+console.log("in ::", 'newProp' in defineProp)
+console.log("in not Exist::", 'xxx' in defineProp)
+
+
+
+
+console.log("reflect getPropertyOf::", Reflect.getPrototypeOf(benz))
+console.log("protoType ::", Object.getPrototypeOf(benz));
+console.log("__proto__::", benz.__proto__)
+
+
+
+
+
+console.log('delete with delete::', delete defineProp['newProp']);
+console.log('delete with Reflect.deleteProperty::', Reflect.deleteProperty(Object.freeze(defineProp), 'newProp1'))
+
+
+
+
+
+let setProp1 = {
+
+	name : 'majid'
+};
+
+let setProp2 = {
+
+	getName(){
+	
+		return this.name
+	}
+}
+
+console.log("reflect setPrototypeOf :: ", Reflect.setPrototypeOf(setProp1, setProp2) )
+console.log('get name with property od setProp2::', setProp1.getName())
+
+
+
+
+
+//Reflect.get Reflect.set
+
+let getVar1 ={
+	name : 'majid get'
+
+}
+
+Reflect.set(getVar1, 'key1', 'vall1')
+
+
+
+console.log('get var in Reflect.get for object::', Reflect.get(getVar1,'name'), Reflect.get(getVar1, 'ccc'), getVar1);
+
+
+let getVar2=[100,200,300,400];
+
+Reflect.set(getVar2, 100, 'majid')
+
+console.log('get item of array with index and reflect',Reflect.get(getVar2,2), Reflect.get(getVar2, 11), getVar2.fill(1).map((d, i)=>i))
+
+
+
+
+
+
+
+let symbolVar = {
+
+	name :'majid',
+	age : 10,
+	[Symbol.for('salary')] : 100,
+	[Symbol.for('family')] : 'name'
+	
+
+}
+
+const a = Symbol('a');
+Reflect.set(symbolVar, a, 'ccccc')
+
+
+
+console.log("Object.getOwnPropertyNames::", Object.getOwnPropertyNames(symbolVar), Object.getOwnPropertyNames(symbolVar).length);
+console.log("Object.getOwnPropertySymbols::",Object.getOwnPropertySymbols(symbolVar), Object.getOwnPropertySymbols(symbolVar).length);
+console.log("Reflect.ownkeys::", Reflect.ownKeys(symbolVar), Reflect.ownKeys(symbolVar).length)
+
+
 </script>
 </body>
 
