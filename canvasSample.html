@@ -1,0 +1,83 @@
+
+
+<!--https://www.7learn.com/tutorials/up-and-running-with-html5-canvas-part3-->
+<html>
+	<head></head>
+	<body>
+	
+		<canvas id="simpleCanvas" width="300" height="300" style="border:1px solid gray">
+			your browser can not support canvas
+		
+		</canvas>
+
+
+		<script>
+		
+			let canvas = document.getElementById('simpleCanvas')
+
+
+			let ctx = canvas.getContext('2d');//webgl
+			let radian = Math.PI/180;
+			//let ctxGl = canvas.getContext('webgl')
+			console.log("getContenxt 2d", ctx)
+			//console.log("getContext webgl for 3d::", ctxGl)
+
+
+
+			//ctx.fillRect(100, 100, 10,10)
+			//ctx.fillRect(0,0, canvas.width,canvas.height)
+
+
+
+			//ctx.lineWidth = 3;
+			//ctx.strokeRect(100,100, 50,50)
+
+
+
+			//ctx.fillRect(100, 100, 50,50);
+			//ctx.clearRect(100,100,8,8);
+
+
+
+			
+
+			//ctx.beginPath();
+			//ctx.moveTo(25,25);
+			//ctx.lineTo(100,100);
+			//ctx.closePath();
+			//ctx.stroke();
+
+			//ctx.beginPath();
+			//ctx.moveTo(70,50);
+			//ctx.lineTo(100,75);
+			//ctx.lineTo(100, 25);
+			//ctx.fill();
+
+
+
+			//ctx.beginPath();
+			//ctx.arc(160,160,50,0,2*Math.PI, true);
+			//ctx.arc(160,160,50,5*radian,90*radian)
+			//ctx.stroke()
+			//ctx.fill()
+
+
+
+			ctx.beginPath();
+			ctx.arc(75, 75, 50,0 , Math.PI * 2, true) // Outer circle
+			ctx.moveTo(110, 75);
+			ctx.arc(75, 75, 35,0 , Math.PI, false);  // Mouth (clockwise)
+			ctx.moveTo(65, 65)
+			ctx.arc(60, 65, 5,0 , Math.PI * 2, true);  // Left eye
+			ctx.moveTo(95, 65);
+			ctx.arc(90, 65, 5,0, Math.PI * 2, true);  // Right eye
+			ctx.stroke()
+
+
+
+		</script>
+	
+	</body>
+
+
+</html>
