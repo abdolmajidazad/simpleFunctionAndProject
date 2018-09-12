@@ -5,7 +5,7 @@
 	<head></head>
 	<body>
 	
-		<canvas id="simpleCanvas" width="300" height="300" style="border:1px solid gray">
+		<canvas id="simpleCanvas" width="1000" height="1000" style="border:1px solid gray">
 			your browser can not support canvas
 		
 		</canvas>
@@ -63,15 +63,142 @@
 
 
 
-			ctx.beginPath();
-			ctx.arc(75, 75, 50,0 , Math.PI * 2, true) // Outer circle
-			ctx.moveTo(110, 75);
-			ctx.arc(75, 75, 35,0 , Math.PI, false);  // Mouth (clockwise)
-			ctx.moveTo(65, 65)
-			ctx.arc(60, 65, 5,0 , Math.PI * 2, true);  // Left eye
-			ctx.moveTo(95, 65);
-			ctx.arc(90, 65, 5,0, Math.PI * 2, true);  // Right eye
-			ctx.stroke()
+			//ctx.beginPath();
+			//ctx.arc(75, 75, 50,0 , Math.PI * 2, true) // Outer circle
+			//ctx.moveTo(110, 75);
+			//ctx.arc(75, 75, 35,0 , Math.PI, false);  // Mouth (clockwise)
+			//ctx.moveTo(65, 65)
+			//ctx.arc(60, 65, 5,0 , Math.PI * 2, true);  // Left eye
+			//ctx.moveTo(95, 65);
+			//ctx.arc(90, 65, 5,0, Math.PI * 2, true);  // Right eye
+			//ctx.stroke()
+
+
+
+
+			//https://www.rgraph.net/blog/an-interactive-example-of-the-html5-canvas-arcto-function.html
+			//ctx.beginPath()
+			//ctx.moveTo(100,225);
+			//ctx.arcTo(597,10,500,225, 34);
+			//ctx.lineTo(500,225);
+			//ctx.stroke()
+
+
+
+
+
+
+
+
+			//ctx.beginPath();
+			//ctx.moveTo(50,20);
+			//ctx.quadraticCurveTo(230,30,50,100);
+			//ctx.stroke()
+
+
+			//http://www.victoriakirst.com/beziertool/
+			//ctx.beginPath();
+			//ctx.moveTo(100,20);
+			//ctx.bezierCurveTo(20, 50, 200,150,100, 200);
+			//ctx.stroke()
+
+
+
+
+
+
+
+			//ctx.fillStyle='rgba(255,2,55,0.5)';
+			//ctx.fillRect(10,10,200,200);
+			//ctx.fillStyle = 'rgba(255,2,55,0.1)';
+			//ctx.fillRect(210,210,50,50);
+
+
+
+			//ctx.strokeStyle = 'rgba(255,255,7,0.5)';
+			//ctx.strokeRect(20,20,100,100);
+			//ctx.strokeStyle = 'rgba(0,255,255,0.8)';
+			///ctx.strokeRect(120,120,111,111)
+
+
+
+
+
+
+
+			//ctx.globalAlpha = 1;
+			//ctx.fillStyle = "blue";
+			//ctx.fillRect(10,10,100,100);
+			//ctx.globalAlpha = 0.5;
+			//ctx.fillStyle = 'green';
+			//ctx.fillRect(40,40, 100,100)
+
+
+
+
+
+
+			
+			////ctxc .createLinearGradient(x0, y0, x1, y1);
+			//let linergradiant = ctx.createLinearGradient(0,0,200,0);
+			//linergradiant.addColorStop(0,'green');
+			//linergradiant.addColorStop(0.5, 'rgba(255,0,255,0.5)');
+			//linergradiant.addColorStop(1, 'red');
+			//ctx.fillStyle = linergradiant;
+			//ctx.fillRect(10,10, 150, 100);
+
+
+
+
+
+
+
+
+			////ctx.createRadialGradient(x0, y0, r0, x1, y1, r1);
+			//let radialGradient = ctx.createRadialGradient(100,100,20,100,100,80);
+			//radialGradient.addColorStop(0,'green');
+			//radialGradient.addColorStop(0.5,'rgba(255,0,0)');
+			//radialGradient.addColorStop(1,'rgba(255,255,255,1)');
+			//ctx.fillStyle = radialGradient;
+			//ctx.fillRect(10,10,180,180);
+
+
+			
+
+			// create the off-screen canvas 
+			//var canvasPattern = document.createElement("canvas");
+			//canvasPattern.width = 10;
+			//canvasPattern.height = 10; 
+			//var contextPattern = canvasPattern.getContext("2d");
+			// draw pattern to off-screen context 
+			//contextPattern.beginPath();
+			//contextPattern.strokeRect(0.5, 0.5, 10, 10);
+			//contextPattern.arc(5.5, 5.5, 3,0, Math.PI);
+			//contextPattern.rect(3, 3, 1, 1);
+			//contextPattern.rect(7, 3, 1, 1); 
+			//contextPattern.stroke();
+			
+			//var pattern = ctx.createPattern(canvasPattern,"repeat");
+			//ctx.fillStyle = pattern;
+			//ctx.fillRect(20, 20, 100, 100);
+			//ctx.fill();
+
+
+
+
+			ctx.shadowOffsetX = 10;
+			ctx.shadowOffsetY = 10;
+			ctx.shadowBlur = 10;
+			ctx.shadowColor = 'rgb(0, 0, 0)';
+			ctx.fillStyle = 'green';
+			ctx.fillRect(10, 10, 50, 50);
+			ctx.shadowBlur = 1;
+			ctx.fillRect(100, 100, 50, 50);
+
+
+
+
+
 
 
 

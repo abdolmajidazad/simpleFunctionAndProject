@@ -574,6 +574,25 @@ console.log("Object.getOwnPropertySymbols::",Object.getOwnPropertySymbols(symbol
 console.log("Reflect.ownkeys::", Reflect.ownKeys(symbolVar), Reflect.ownKeys(symbolVar).length)
 
 
+
+
+
+
+
+function loopSetTimeout(){
+
+	let xx = 1000;
+	(function loop() {
+		if (xx<1100) {  
+         	   xx+=20;
+		   console.log("loooooop::", xx)
+	           setTimeout(loop, 1000);      }
+	})()
+
+}
+
+loopSetTimeout()
+
 </script>
 </body>
 
