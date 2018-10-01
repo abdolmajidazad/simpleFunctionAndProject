@@ -1,0 +1,9 @@
+
+https://www.npmjs.com/package/amamajid
+npm login
+
+npm init --scope=<pkg>
+
+npm publish --access=public
+
+npm unpublish [<@scope>/]<pkg>[@<version>]
