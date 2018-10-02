@@ -7,3 +7,26 @@ npm init --scope=<pkg>
 npm publish --access=public
 
 npm unpublish [<@scope>/]<pkg>[@<version>]
+
+npm unpublish <package_name> -f to remove the entire package thanks to the -f or force flag
+npm unpublish <package_name>@<version> to remove a specific version
+
+
+
+
+
+
+deprecate:
+
+npm deprecate <package> "<message>" to deprecate the entire package
+npm deprecate <package>@<version> "<message>" to deprecate a specific version
+
+remove deprecate message 
+npm deprecate <pkg> ""
+
+
+
+
+
+npm owner add npm <package>
+npm owner rm <your_username> <package>
