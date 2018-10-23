@@ -27,9 +27,13 @@
     width:33px;
     display:block;
 }
-#place .selectedSeat
+#place .selectedSeatMan
 {
     background-image:url("images/booked_seat_img.gif");
+}
+#place .selectedSeatWoman
+{
+    background-image:url("images/booked_seat_img_woman.gif");
 }
 #place .selectingSeat
 {
