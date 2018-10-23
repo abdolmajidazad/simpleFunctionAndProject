@@ -593,6 +593,28 @@ function loopSetTimeout(){
 
 loopSetTimeout()
 
+
+
+
+
+function checkPathExist(obj, path) {
+  var pathArray =path.split(".")
+  for (var i of pathArray) {
+    if (Reflect.get(obj, i)) {
+      obj = obj[i];
+		
+    }else{
+		return false;
+    }
+  }
+	return true;
+}
+
+var test = {level1:{level2:{level3:'level3'}} };
+
+console.log('level1.level2.level3 => ',checkPathExist(test, 'level1.level2.level3')); // true
+console.log( 'level1.level2.foo => ',checkPathExist(test, 'level1.level2.foo')); // false
+
 </script>
 
 		<div>end</div>

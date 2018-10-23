@@ -1,0 +1,53 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+<div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <img id="countryFlag" src="">
+        <span id="countryName"></span>
+        <span class="glyphicon glyphicon-chevron-down"></span>
+    </button>
+
+    <ul class="dropdown-menu">
+        <li onclick="selectCountry('iran', 'iran.png')" >
+            <a href="#" title="Select this card">
+                <img src="./images/iran.png">
+                iran
+            </a>
+        </li>
+        <li onclick="selectCountry('france', 'france.png')">
+            <a href="#" title="Select this card">
+                <img src="./images/france.png">
+                france
+            </a>
+        </li>
+        <li onclick="selectCountry('england', 'united-kingdom.png')">
+            <a href="#" title="Select this card">
+                <img src="./images/united-kingdom.png">
+                england
+            </a>
+        </li>
+        <li onclick="selectCountry('china', 'china.png')">
+            <a href="#" title="Select this card">
+                <img src="./images/china.png">
+                china
+            </a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    const selectCountry = (country,flag)=>{
+        document.getElementById('countryName').innerHTML = country;
+        document.getElementById('countryFlag').src = "./images/"+flag;
+        console.log(country)
+    };
+    selectCountry('iran', 'iran.png')
+</script>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+</html>
