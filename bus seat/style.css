@@ -1,5 +1,5 @@
 .busBack{
-    background: url("./images/bus-c.png");
+    background: url("./images/bus/c.png");
     background-repeat: no-repeat;
     background-size: 1045px;
     width: 1045px;
@@ -7,42 +7,31 @@
     align-items: center;
     justify-content: center;
     display: flex;
+    /*transform:rotate(90deg);*/
 }
-#holder{
-    height: 215px;
-    width: 490px;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    margin: auto;
+.holderBusSeat{
+
+position: relative;
+    margin-left: 90px;
+    margin-top: 10px;
 }
-#place {
-    position: relative;
-    /* margin: 7px; */
-    height: 200px;
-    width: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.placeBusSeat {
+    list-style-type: none;
+    margin: 5px;
     padding: 0;
-    margin: 0;
+    overflow: hidden;
+    height: 30px;
 
 }
-#place a{
+.placeBusSeat a{
     font-size:0.6em;
 }
-#place li
+.placeBusSeat li
 {
     list-style: none outside none;
-    position: absolute;
+    float: left;
 }
-/*#place li:hover*/
-/*{*/
-    /*background-color:yellow;*/
-/*}*/
-#place .seat{
-    /*background:url("images/available_seat_img.gif") no-repeat scroll 0 0 transparent;*/
+.placeBusSeat .seat{
     height:25px;
     width:25px;
     background-color: #ffffff;
@@ -50,22 +39,28 @@
     cursor: pointer;
     border-radius: 5px;
     border: 1px solid gray;
+    margin: 2px 20px;
 }
-#place .selectedSeatMan
+
+.placeBusSeat .seatNoneDisplay{
+    height:25px;
+    width:25px;
+    display:block;
+    opacity: 0;
+    margin: 2px 20px;
+}
+.placeBusSeat .selectedSeatMan
 {
-    /*background-image:url("images/booked_seat_img.gif");*/
     background-color: #022a5b;
     cursor: not-allowed;
 }
-#place .selectedSeatWoman
+.placeBusSeat .selectedSeatWoman
 {
-    /*background-image:url("images/booked_seat_img_woman.gif");*/
     background-color: #ff0489;
     cursor: not-allowed;
 }
-#place .selectingSeat
+.placeBusSeat .selectingSeat
 {
-    /*background-image:url("images/selected_seat_img.gif");*/
     background-color: #00fb01;
     animation: selectedAnimate 1s Ease;
 }
@@ -86,10 +81,7 @@
         width:25px;
     }
 }
-#place .row-3, #place .row-4{
-    margin-top:10px;
-}
-#seatDescription li{
+.seatDescription li{
     verticle-align:middle;
     list-style: none outside none;
     padding-left:35px;
