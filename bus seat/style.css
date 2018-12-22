@@ -1,9 +1,11 @@
 .busBack{
-    background: url("./images/bus/c.png");
+    background: url("./images/bus/c90.png");
     background-repeat: no-repeat;
-    background-size: 1045px;
-    width: 1045px;
-    height:320px;
+    /*background-size: 320px;*/
+    /*width: 1045px;*/
+    /*height:320px;*/
+    height: 1045px;
+    /*width:320px;*/
     align-items: center;
     justify-content: center;
     display: flex;
@@ -11,16 +13,20 @@
 }
 .holderBusSeat{
 
-position: relative;
-    margin-left: 90px;
-    margin-top: 10px;
+    position: relative;
+    /*margin-left: 90px;*/
+    margin-top: 90px;
+    /*margin-top: 10px;*/
 }
 .placeBusSeat {
-    list-style-type: none;
+    /*list-style-type: none;*/
     margin: 5px;
     padding: 0;
-    overflow: hidden;
-    height: 30px;
+    /*overflow: hidden;*/
+    /*height: 30px;*/
+    height: auto;
+    width: 30px;
+    float: left;
 
 }
 .placeBusSeat a{
@@ -29,7 +35,8 @@ position: relative;
 .placeBusSeat li
 {
     list-style: none outside none;
-    float: left;
+    margin: 0;
+    /*float: left;*/
 }
 .placeBusSeat .seat{
     height:25px;
@@ -39,7 +46,8 @@ position: relative;
     cursor: pointer;
     border-radius: 5px;
     border: 1px solid gray;
-    margin: 2px 20px;
+    /*margin: 2px 20px;*/
+    margin: 20px 2px;
 }
 
 .placeBusSeat .seatNoneDisplay{
@@ -47,7 +55,8 @@ position: relative;
     width:25px;
     display:block;
     opacity: 0;
-    margin: 2px 20px;
+    /*margin: 2px 20px;*/
+    margin: 20px 2px;
 }
 .placeBusSeat .selectedSeatMan
 {
@@ -82,11 +91,11 @@ position: relative;
     }
 }
 .seatDescription li{
-    verticle-align:middle;
-    list-style: none outside none;
-    padding-left:35px;
-    height:35px;
-    float:left;
+    /*verticle-align:middle;*/
+    /*list-style: none outside none;*/
+    /*padding-left:35px;*/
+    /*height:35px;*/
+    /*float:left;*/
 }
 
 
