@@ -1,0 +1,105 @@
+<html>
+<head>
+    <link rel="stylesheet" href="./dashjs/resource/controlbar.css">
+    <script class="code" src="./dashjs/resource/control-bar.js"></script>
+    <!--<script class="code" src="./dashjs/resource/dash.all.debug.js"></script>-->
+    <script class="code" src="./dashjs/resource/dash.all.min.js"></script>
+
+    <style>
+        video {
+            width: 100%;
+        }
+
+        .dash-video-player {
+            position: relative; /* This position relative is needed to position the menus */
+            width: 640px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body onload="startVideo()">
+<div class="dash-video-player code">
+    <div class="videoContainer" id="newid-videoContainer">
+        <video data-dashjs-player autoplay="false"  ></video>
+        <div id="newid-videoController" class="video-controller unselectable video-controller-hover">
+            <div id="newid-playPauseBtn" class="btn-play-pause" title="Play/Pause">
+                <span id="newid-iconPlayPause" class="icon-play"></span>
+            </div>
+            <span id="newid-videoTime" class="time-display">00:00:00</span>
+            <div id="newid-fullscreenBtn" class="btn-fullscreen control-icon-layout" title="Fullscreen">
+                <span class="icon-fullscreen-enter"></span>
+            </div>
+            <div id="newid-bitrateListBtn" class="control-icon-layout" title="Bitrate List">
+                <span class="icon-bitrate"></span>
+            </div>
+            <input type="range" id="newid-volumebar" class="volumebar" value="1" min="0" max="1" step=".01"/>
+            <div id="newid-muteBtn" class="btn-mute control-icon-layout" title="Mute">
+                <span id="newid-iconMute" class="icon-mute-off"></span>
+            </div>
+            <div id="newid-trackSwitchBtn" class="control-icon-layout" title="A/V Tracks">
+                <span class="icon-tracks"></span>
+            </div>
+            <div id="newid-captionBtn" class="btn-caption control-icon-layout" title="Closed Caption">
+                <span class="icon-caption"></span>
+            </div>
+            <span id="newid-videoDuration" class="duration-display">00:00:00</span>
+            <div class="seekContainer">
+                <div id="newid-seekbar" class="seekbar seekbar-complete">
+                    <div id="newid-seekbar-back" class="seekbar seekbar-back"></div>
+                    <div id="newid-seekbar-buffer" class="seekbar seekbar-buffer"></div>
+                    <div id="newid-seekbar-play" class="seekbar seekbar-play">
+                        <div class="seekbar seekbar-play-bullet"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script class="code">
+    let playerPrefixId = 'newid-';
+    let url = 'https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd';
+//    let url = '../dashjs/stream/930630159.mpd';
+    function startVideo() {
+        let isPlaying = false;
+        var videoElement = document.querySelector(`#${playerPrefixId}videoContainer video`);
+        var player = dashjs.MediaPlayer().create();
+        player.initialize(videoElement, url, false);
+        var controlbar = new ControlBar(player);
+        controlbar.initialize(playerPrefixId);
+        // Playing event
+        videoElement.addEventListener("playing", function (e) {
+            isPlaying = true;
+        });
+
+        // Pause event
+        videoElement.addEventListener("pause", function (e) {
+            isPlaying = false;
+        });
+
+        // Seeking event
+        videoElement.addEventListener("seeking", function (e) {
+        });
+
+        // Volume changed event
+        videoElement.addEventListener("volumechange", function (e) {
+        });
+
+        videoElement.addEventListener('mouseover', (e) => {
+            if (isPlaying) {
+
+            }
+        });
+        videoElement.addEventListener('mouseout', (e) => {
+            if (isPlaying) {
+
+            }
+        });
+
+    }
+
+
+</script>
+</body>
+</html>

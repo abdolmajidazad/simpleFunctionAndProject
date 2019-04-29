@@ -1,0 +1,56 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../resource/main.css">
+</head>
+<body>
+<ul>
+    <li><a href="/">Home</a></li>
+    <li><a class="active" href="../html5/index.html">html5</a></li>
+    <li><a href="../dashjs/index.html">dashjs</a></li>
+</ul>
+
+
+
+<h1>HTML5 SAMPLE</h1>
+<br>
+<input placeholder="Insert video link"  type="text" id="mpdFile" onblur="loadVideo()">
+
+
+<div>
+    <button onclick="loadVideo('http://www.charkhoneh.com/ws/resource/trailer/MOVIE/930646142/0/2')">sample1</button>
+    <div>http://www.charkhoneh.com/ws/resource/trailer/MOVIE/930646142/0/2</div>
+</div>
+<div>
+    <button onclick="loadVideo('../resource/html5/video/2.mp4')">sample2</button>
+    <div>../resource/html5/video/2.mp4</div>
+</div>
+<!--<div>sample1 : http://www.charkhoneh.com/ws/resource/trailer/MOVIE/930646142/0/2</div>-->
+<!--<div>sample2 : ../resource/html5/video/2.mp4</div>-->
+<br>
+<div id="videoPlayer" style="text-align: center"></div>
+<div>
+    <button>
+        <a href="/">home</a>
+    </button>
+    <button>
+        <a href="../dashjs/index.html">dashjs</a>
+    </button>
+</div>
+
+
+<script>
+    let url = '';
+    //    let url = './stream/930630159.mpd';
+    const inputDom = document.getElementById('mpdFile');
+    inputDom.value = url;
+    const loadVideo = (link)=>{
+        document.getElementById('videoPlayer').innerHTML='';
+        url = link && link || inputDom.value;
+        document.getElementById('videoPlayer').innerHTML = `<video width="640"  controls>
+        <source id="video" src="${url}" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>`;
+    };
+</script>
+</body>
+</html>

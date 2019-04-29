@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
+    <link href="./css/video-js.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="live-stream-main">
+    <video id="live-stream" class="video-js vjs-default-skin vjs-big-play-centered"
+           data-setup='{"example_option":true}'>
+    </video>
+</div>
+
+<script src="./js/video.min.js"></script>
+<script src="./js/videojs-flash.min.js"></script>
+<script src="./js/videojs-hls-quality-selector.min.js"></script>
+
+
+<script>
+    var options = {
+        poster: "back.png",
+        aspectRatio: '16:9',
+        autoplay: true,
+        controls: true,
+        loop: true,
+        language: 'fa',
+        sourceOrder: true,
+        responsive: true,
+        breakpoints: {
+            tiny: 300,
+            xsmall: 400,
+            small: 500,
+            medium: 600,
+            large: 700,
+            xlarge: 800,
+            huge: 900
+        },
+        sources: [{
+//            src: "http://conv.jhoobin.com:8180/hls/lenz.m3u8",
+            src: "http://sample.vodobox.com/planete_interdite/planete_interdite_alternate.m3u8",
+            type: "application/x-mpegURL"
+        }],
+        techOrder: ["html5", "flash"],
+        flash: {
+            swf: 'videojs/video-js.swf'
+        }
+    };
+    videojs.addLanguage('fa', {
+        "Play": "پخش",
+        "Pause": "توقف",
+        "Current Time": "زمان کنونی",
+        "Duration": "زمان کل",
+        "Remaining Time": "زمان باقیمانده",
+        "LIVE": "پخش زنده",
+        "Loaded": "بارگذاری شده",
+        "Fullscreen": "تمام صفحه",
+        "Non-Fullscreen": "حالت اولیه",
+        "Mute": "بی صدا",
+        "Unmute": "صدا",
+        "You aborted the video playback": "پخش ویدیو لغو گردید",
+        "A network error caused the video download to fail part-way.": "یک خطای در شبکه باعت قطع شدن ی قسمت از ویدیو شد",
+        "The video could not be loaded, either because the server or network failed or because the format is not supported.": "این ویدیو نمیتواند بارگذاری شود، زیرا سرور یا شبکه مشکل دارد و یا به دلیل عدم پشتیبانی از فرمت",
+        "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "پخش ویدئو با توجه به مشکل فساد قطع شد یا دلیل استفاده از ویدئو مورد استفاده مرورگر شما پشتیبانی نمی کند",
+        "No compatible source was found for this video.": "هیچ منبع سازگار برای این ویدیو یافت نشد",
+        "The media could not be loaded, either because the server or network failed or because the format is not supported.": "ویدیو را نمی تواند بارگذاری کند،سرور یا شبکه مشکل دارد  یا به این دلیل که فرمت پشتیبانی نمی شود"
+    });
+    let player = videojs('live-stream', options);
+    player.hlsQualitySelector();
+    player.addClass('vjs-matrix');
+    player.on(['loadstart', 'play', 'playing', 'firstplay', 'pause', 'ended', 'adplay', 'adplaying', 'adfirstplay', 'adpause', 'adended', 'contentplay', 'contentplaying', 'contentfirstplay', 'contentpause', 'contentended', 'contentupdate'], function (e, d) {});
+</script>
+</body>
+</html>

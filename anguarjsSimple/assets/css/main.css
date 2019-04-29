@@ -1,0 +1,7 @@
+@import url('./fonts.css');
+html, body {
+    font-family: IRANSans, Tahoma, sans-serif !important;
+    font-size: 12px;
+    margin: 0;
+    overflow-x: hidden;
+}
