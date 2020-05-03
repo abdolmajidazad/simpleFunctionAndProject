@@ -1,0 +1,110 @@
+<html>
+
+
+<head>
+<style>
+
+GEEKFORGEEKS {                                         
+    margin-left: 70px; 
+    font-weight: bold ; 
+    float: left; 
+    clear: left; 
+    width: 100px; 
+    text-align: left; 
+    margin-right: 10px; 
+    font-family:sans-serif,bold, Arial, Helvetica; 
+    font-size:14px; 
+} 
+   
+/* div {  
+    box-sizing: border-box; 
+    width: 100%; 
+    border: 100px solid black; 
+    float: left; 
+    align-content: center; 
+    align-items: center; 
+}  */
+   
+form {                                         
+    margin: 0 auto; 
+    width: 600px; 
+}
+
+</style>
+</head>
+
+<body>
+<script src="test.js">
+
+
+</script>
+
+
+
+<h1 style="text-align: center"> REGISTRATION FORM </h1>           
+<form name="RegForm" id="RegFormId" action="/submit.php" onsubmit="return GEEKFORGEEKS()" method="post">  
+      
+    <lable>Name: </lable>
+    <input type="text" size=65 name="Name"> 
+    <div class="error" id="Name"></div>
+  
+    <br>        
+    <lable> Address: </lable><input type="text" size=65 name="Address">  
+    <div class="error" id="Address"></div><br> 
+    <label>E-mail Address:</label>
+    <input id="EMail-id" type="text" size=65 name="EMail" >  
+    <div class="error" id="EMail"></div>
+    <br> 
+
+    <lable>Password: </lable>
+    <input type="password" size=65 name="Password"> 
+    <div class="error" id="Password"></div>
+    <br> 
+  
+    <label>Telephone: </label>
+    <input type="text" size=65 name="Telephone"> 
+    <div class="error" id="Telephone"></div><br> 
+    <br>   
+           
+    <label>SELECT YOUR COURSE </label>   
+        <select type="text" value="" name="Subject"> 
+            <option>BTECH</option> 
+            <option>BBA</option> 
+            <option>BCA</option> 
+            <option>B.COM</option> 
+            <option>GEEKFORGEEKS</option> 
+        </select><br>
+  
+   <label>SELECT YOUR COURSE2 </label>  
+    <select id="select1" name=multiple multiple>
+      <option value="blues" selected>Blues</option>
+      <option value="rock" selected>Rock</option>
+      <option value="classic">Classic</option>
+  </select>
+  
+      <div class="error" id="Subject"></div><br> 
+      <label>Comments:</label> 
+      <textarea cols="55" name="Comment">  </textarea>
+  
+  
+  <label for="gender">Gender: </label>
+<input type="radio" name="genderS" value="1">Male</input>
+<input type="radio" name="genderS" value="0" >Female</input>
+  <br>
+  <input type="file" name="myfile" /><br />
+  
+  
+      <input type="submit" value="send" name="Submit">      
+      <input type="reset" value="Reset" name="Reset">   
+                
+</form> 
+
+
+<form name="RegForm2" action="/submit.php" onsubmit="return GEEKFORGEEKS()" method="post">  
+          
+</form> 
+
+
+
+</body>
+</html>
