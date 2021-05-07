@@ -71,7 +71,7 @@
     "http-proxy": "^1.11.1",
     "jsonfile": "^4.0.0",
     "line-navigator": "^2.1.6",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.21",
     "pixrem": "^4.0.1",
     "request": "^2.88.0"
   }
