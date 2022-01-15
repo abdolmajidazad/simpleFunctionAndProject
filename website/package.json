@@ -26,7 +26,7 @@
     "karma-junit-reporter": "^0.2.2",
     "protractor": "^2.1.0",
     "serve-static": "^1.12.3",
-    "shelljs": "^0.2.6",
+    "shelljs": "^0.8.5",
     "time-grunt": "^1.4.0"
   },
   "scripts": {
