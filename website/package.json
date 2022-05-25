@@ -8,7 +8,7 @@
   "devDependencies": {
     "babel-helpers": "^6.24.1",
     "bower": "^1.3.1",
-    "grunt": "^1.0.3",
+    "grunt": "^1.5.3",
     "grunt-chrome-extension-reload": "^0.2.6",
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-copy": "^1.0.0",
