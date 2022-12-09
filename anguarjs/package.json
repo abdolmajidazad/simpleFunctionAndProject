@@ -15,7 +15,7 @@
     "babel-preset-es2015": "^6.24.1",
     "body-parser": "^1.13.2",
     "compression": "^1.6.2",
-    "express": "^4.15.3",
+    "express": "^4.17.3",
     "grunt": "^1.0.3",
     "grunt-babel": "^7.0.0",
     "grunt-config": "^1.0.0",
